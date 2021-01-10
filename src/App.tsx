@@ -1,19 +1,19 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
-import { BrowserRouter } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
 
 import logo from './logo.svg';
 import './App.css';
 import { getStore } from './framework/redux';
 
-const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href') as string;
-const store = getStore(createBrowserHistory());
+const history = createBrowserHistory();
+const store = getStore(history);
 
 function App() {
   return (
     <Provider store={store}>
-      <BrowserRouter basename={baseUrl}>
+      <ConnectedRouter history={history}>
         <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
@@ -25,7 +25,7 @@ function App() {
             </a>
           </header>
         </div>
-      </BrowserRouter>
+      </ConnectedRouter>
     </Provider>
   );
 }
