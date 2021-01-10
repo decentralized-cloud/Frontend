@@ -15,7 +15,8 @@
     "flow": "flow",
     "lint": "eslint src",
     "fixlint": "eslint --fix --ext .js --ext .jsx --ext .ts --ext .tsx src",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "format": "prettier --write --single-quote true --trailing-comma all --print-width 150 ./src && npm run fixlint"
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +41,7 @@
     "@material-ui/icons": "^4.11.2",
     "@reduxjs/toolkit": "^1.5.0",
     "@testing-library/user-event": "^12.6.0",
+    "connected-react-router": "^6.8.0",
     "cuid": "^2.1.8",
     "graphql-relay": "^0.6.0",
     "history": "^5.0.0",
