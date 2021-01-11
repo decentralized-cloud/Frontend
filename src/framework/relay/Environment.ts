@@ -1,8 +1,8 @@
-import { Environment, Network, RecordSource, Store } from 'relay-runtime';
+import { Environment, Network, RecordSource, Store, RequestParameters, Variables } from 'relay-runtime';
 
 import '../../globalConfig';
 
-const fetchQuery = async (operation, variables) => {
+const fetchQuery = async (request: RequestParameters, variables: Variables) => {
   const response = await fetch(window._env_.API_GATEWAY_PUBLIC_URL, {
     method: 'POST',
     headers: {
@@ -10,7 +10,7 @@ const fetchQuery = async (operation, variables) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      query: operation.text,
+      query: request.text,
       variables,
     }),
   });
@@ -22,7 +22,7 @@ const fetchQuery = async (operation, variables) => {
   const result = await response.json();
 
   if (result.errors && result.errors.length > 0) {
-    throw new Error(result.errors.map((error) => error.message).reduce((reduction, message) => `${reduction}\n${message}`));
+    throw new Error(result.errors.map((error: Error) => error.message).reduce((reduction: string, message: string) => `${reduction}\n${message}`));
   }
 
   return result;

@@ -1,7 +1,11 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { reducer as formReducer } from 'redux-form';
 import { connectRouter } from 'connected-react-router';
-import { History } from 'history';
+import { History, State } from 'history';
+
+export interface IApplicationState {
+  router: State;
+}
 
 const getRootReducer = (history: History) =>
   combineReducers({
