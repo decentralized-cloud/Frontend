@@ -26,5 +26,3 @@ __generated__/
 /public/env-config.js
 env-config.js
 .eslintcache
-package-lock.json
-
