@@ -7,13 +7,21 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import i18n from './i18n';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Auth0ProviderWithHistory from './auth/auth0-provider-with-history';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <I18nextProvider i18n={i18n}>
+  // <React.StrictMode>
+  //   <I18nextProvider i18n={i18n}>
+  //     <App />
+  //   </I18nextProvider>
+  // </React.StrictMode>,
+
+  <Router>
+    <Auth0ProviderWithHistory>
       <App />
-    </I18nextProvider>
-  </React.StrictMode>,
+    </Auth0ProviderWithHistory>
+  </Router>,
   document.getElementById('root'),
 );
 
