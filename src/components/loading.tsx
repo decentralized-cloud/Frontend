@@ -1,4 +1,3 @@
-import React from 'react';
 const loadingImg = '../loading.svg';
 
 const Loading = () => (
