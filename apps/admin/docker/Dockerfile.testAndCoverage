@@ -5,7 +5,7 @@ ARG COVERALLS_SERVICE_NAME
 ARG COVERALLS_REPO_TOKEN
 
 ADD . /src
-WORKDIR /apps/admin/src
+WORKDIR /apps/admin
 RUN yarn install
 RUN yarn run relay
 RUN yarn run test:ci
