@@ -35,7 +35,7 @@ steps:
     inputs:
       repository: $(DOCKER_REPOSITORY_NAME)
       command: "build"
-      Dockerfile: "$(system.defaultWorkingDirectory)/docker/Dockerfile.build"
+      Dockerfile: "$(system.defaultWorkingDirectory)/apps/admin/docker/Dockerfile.build"
       buildContext: "$(system.defaultWorkingDirectory)"
       arguments: "--build-arg VERSION=${{variables.version}}"
       tags: ${{variables.version}}
@@ -44,7 +44,7 @@ steps:
     displayName: "Test and coverage"
     inputs:
       command: "build"
-      Dockerfile: "$(system.defaultWorkingDirectory)/docker/Dockerfile.testAndCoverage"
+      Dockerfile: "$(system.defaultWorkingDirectory)/apps/admin/docker/Dockerfile.testAndCoverage"
       buildContext: "$(system.defaultWorkingDirectory)"
       arguments: "--build-arg COVERALLS_SERVICE_NAME=$(COVERALLS_SERVICE_NAME) --build-arg COVERALLS_REPO_TOKEN=$(COVERALLS_REPO_TOKEN)"
 
