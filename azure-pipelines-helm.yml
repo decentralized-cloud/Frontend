@@ -36,5 +36,5 @@ steps:
     inputs:
       command: "build"
       Dockerfile: "$(system.defaultWorkingDirectory)/apps/admin/docker/Dockerfile.buildAndPushHelmChart"
-      buildContext: "$(system.defaultWorkingDirectory)"
+      buildContext: "$(system.defaultWorkingDirectory)/apps/admin"
       arguments: "--build-arg GITHUB_ACCESS_CREDENTIAL=$(GITHUB_ACCESS_CREDENTIAL) --build-arg VERSION=${{variables.version}}"

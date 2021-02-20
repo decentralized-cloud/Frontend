@@ -12,4 +12,3 @@ fi
 cd "$current_directory"/..
 
 docker build --build-arg GITHUB_ACCESS_CREDENTIAL=$GITHUB_ACCESS_CREDENTIAL -f apps/admindocker/Dockerfile.buildAndPushHelmChart .
-
