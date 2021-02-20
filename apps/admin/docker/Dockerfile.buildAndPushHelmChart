@@ -6,6 +6,7 @@ ARG VERSION
 
 ADD . /src
 WORKDIR /apps/admin
+RUN ls
 
 RUN git config --global http.sslVerify false
 RUN git config --global user.email "ci@micro-business.co.nz"
