@@ -5,7 +5,7 @@ LABEL maintainer="morteza.alizadeh@gmail.com"
 ARG VERSION
 
 ADD . /src
-WORKDIR /src
+WORKDIR /apps/admin/src
 RUN yarn install
 RUN yarn run relay
 RUN yarn run build
