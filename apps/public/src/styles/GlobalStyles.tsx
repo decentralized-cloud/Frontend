@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
       --dark: #071749;
       --white: white;
       --primary: #27B3FC;
+      --glow: 2px 2px 30px 5px rgba(42, 179, 252, 0.4);
     }
   
     * {
