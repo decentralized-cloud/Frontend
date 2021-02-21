@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../../../styles/Button";
+import ServerAsset from "./server-asset/ServerAsset";
 
 const StyledLanding = styled.div`
   width: 100%;
@@ -69,7 +70,9 @@ const Landing = () => {
           </Button>
         </Buttons>
       </LeftContainer>
-      <RightContainer>meow</RightContainer>
+      <RightContainer>
+        <ServerAsset />
+      </RightContainer>
     </StyledLanding>
   );
 };
