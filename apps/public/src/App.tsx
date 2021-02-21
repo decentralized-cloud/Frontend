@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomePage from "./components/pages/home/HomePage";
+import Header from "./components/shared/Header";
 
 const StyledApp = styled.div`
   position: fixed;
@@ -16,6 +17,7 @@ const StyledApp = styled.div`
 const App = () => {
   return (
     <StyledApp>
+      <Header />
       <Router>
         <Switch>
           <Route path="/">
