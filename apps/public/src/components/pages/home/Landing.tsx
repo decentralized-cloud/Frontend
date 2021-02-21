@@ -9,7 +9,7 @@ const StyledLanding = styled.div`
   background: linear-gradient(-125deg, var(--light), var(--dark));
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
 `;
 
 const LeftContainer = styled.div`
