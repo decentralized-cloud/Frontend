@@ -30,9 +30,17 @@ const NavContainer = styled.div`
 const NavItem = styled.a`
   height: 100%;
   cursor: pointer;
-  padding: 1rem;
-  font-size: 2rem;
+  padding: 0 2rem;
+  font-size: 1.5rem;
   color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+
+  :hover {
+    color: var(--primary);
+  }
 `;
 
 const ButtonContainer = styled.div`
