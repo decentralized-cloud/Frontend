@@ -19,6 +19,10 @@ const Logo = styled.h3`
   font-weight: 500;
   color: var(--white);
   text-transform: capitalize;
+
+  ::first-letter {
+    color: var(--primary);
+  }
 `;
 
 const NavContainer = styled.div`
