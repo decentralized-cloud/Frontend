@@ -42,6 +42,8 @@ const Description = styled.h3`
 const Buttons = styled.div`
   width: 100%;
   display: flex;
+  margin-top: 3rem;
+  margin-left: 1rem;
 `;
 
 const RightContainer = styled.div``;
@@ -62,8 +64,9 @@ const Landing = () => {
           culpa qui officia deserunt mollit anim id est laborum
         </Description>
         <Buttons>
-          <Button primary>request demo</Button>
-          <Button>login</Button>
+          <Button primary mega>
+            request demo
+          </Button>
         </Buttons>
       </LeftContainer>
       <RightContainer>meow</RightContainer>
