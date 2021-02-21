@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Landing from "./Landing";
 
 const StyleHomePage = styled.div`
   width: 100%;
@@ -9,7 +10,11 @@ const StyleHomePage = styled.div`
 `;
 
 const HomePage = () => {
-  return <StyleHomePage>meow</StyleHomePage>;
+  return (
+    <StyleHomePage>
+      <Landing />
+    </StyleHomePage>
+  );
 };
 
 export default HomePage;
