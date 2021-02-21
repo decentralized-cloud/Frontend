@@ -9,6 +9,8 @@ const StyledHeader = styled.div`
   height: 10rem;
 `;
 
+const Logo = styled.div``;
+
 const Header = () => {
   return <StyledHeader>meow</StyledHeader>;
 };
