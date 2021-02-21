@@ -3,8 +3,10 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
     :root {
-      --light: #517ee7;
-      --dark: #225add;
+      --light: #39147C;
+      --dark: #071749;
+      --white: white;
+      --primary: #27B3FC;
     }
   
     * {
@@ -13,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
       padding: 0;
       font-family: "Roboto", sans-serif;
       font-size: 10px;
+      letter-spacing: 0.08rem;
     }
   
     button {
