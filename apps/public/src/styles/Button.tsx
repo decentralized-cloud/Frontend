@@ -13,7 +13,7 @@ const Button = styled.button`
   color: ${(props: Props) =>
     props.primary ? "var(--light)" : "var(--primary)"};
   border-radius: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
 `;
 
