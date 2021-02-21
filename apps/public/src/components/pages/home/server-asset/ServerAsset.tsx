@@ -43,7 +43,7 @@ const ServerAsset = () => {
     setBigLayers(_bigLayers);
 
     let _smallLayers: number[] = [];
-    for (var i = 0; i < 21; i++) _smallLayers.push(i);
+    for (var j = 0; j < 21; j++) _smallLayers.push(j);
     setSmallLayers(_smallLayers);
   }, []);
 
