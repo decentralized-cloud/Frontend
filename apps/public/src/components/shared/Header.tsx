@@ -27,16 +27,22 @@ const NavContainer = styled.div`
   align-items: center;
 `;
 
+type NavItemProps = {
+  active: boolean;
+};
+
 const NavItem = styled.a`
   height: 100%;
   cursor: pointer;
   padding: 0 2rem;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--white);
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.3s;
+  text-decoration: ${(props: NavItemProps) =>
+    props.active ? "underline" : "none"};
 
   :hover {
     color: var(--primary);
@@ -56,12 +62,12 @@ const ButtonContainer = styled.div`
 const Header = () => {
   return (
     <StyledHeader>
-      <Logo>edge cloud-9</Logo>
+      <Logo>edge</Logo>
       <NavContainer>
-        <NavItem>Home</NavItem>
-        <NavItem>About</NavItem>
-        <NavItem>Contact</NavItem>
-        <NavItem>Meow</NavItem>
+        <NavItem active={true}>Home</NavItem>
+        <NavItem active={false}>About</NavItem>
+        <NavItem active={false}>Contact</NavItem>
+        <NavItem active={false}>Meow</NavItem>
       </NavContainer>
       <ButtonContainer>
         <Button>sign in</Button>
