@@ -5,7 +5,7 @@ type Props = {
 };
 
 const Button = styled.button`
-  padding: 1.2rem 2rem;
+  padding: 1.1rem 1.8rem;
   border: var(--primary);
   border: 1px solid var(--primary);
   background-color: ${(props: Props) =>
