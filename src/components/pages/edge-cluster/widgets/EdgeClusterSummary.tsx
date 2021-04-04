@@ -172,7 +172,6 @@ export const EdgeClustersSummary = React.memo<EdgeClustersSummaryProps>(
                 </TableCell>
                 <TableCell />
               </TableRow>
-              {/*  */}
               <TableRow className={classes.row}>
                 <TableCell>{t('edgeClusterSummary.nodeDeploymentScript')}</TableCell>
                 <TableCell>
@@ -188,7 +187,6 @@ export const EdgeClustersSummary = React.memo<EdgeClustersSummaryProps>(
                 </TableCell>
                 <TableCell />
               </TableRow>
-              {/*  */}
               <TableRow>
                 <TableCell className={classes.titleCell}>
                   <Typography variant="h5">{t('edgeClusterSummary.networking')}</Typography>
