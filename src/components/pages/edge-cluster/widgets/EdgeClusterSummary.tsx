@@ -24,6 +24,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import { EdgeClusterSummary_edgeCluster } from './__generated__/EdgeClusterSummary_edgeCluster.graphql';
 import EdgeClusterEditName from './EdgeClusterEditName';
 import EdgeClusterEditClusterSecret from './EdgeClusterEditClusterSecret';
+import { GenerateNodeDeploymentScript } from '../../../../utils';
 
 export const enNZTranslation = {
   clusterBasics: 'Cluster basics',
@@ -34,6 +35,7 @@ export const enNZTranslation = {
   ip: 'IP',
   port: 'Port',
   kubeconfig: 'Kubeconfig',
+  nodeDeploymentScript: ' Node deployment script',
   copyToClipboard: 'Copy to clipboard',
   download: 'Download',
   editClusterName: 'Edit cluster name',
@@ -69,15 +71,23 @@ export const EdgeClustersSummary = React.memo<EdgeClustersSummaryProps>(
     const [openEditClusterSecret, setOpenEditClusterSecret] = useState(false);
 
     // @ts-ignore: Object is possibly 'undefined'.
-    const ip = provisionDetail?.ingress?.length > 0 ? provisionDetail?.ingress[0].ip : '';
+    const ip: string = provisionDetail?.ingress?.length > 0 ? provisionDetail?.ingress[0].ip : '';
     // @ts-ignore: Object is possibly 'undefined'.
-    const port = provisionDetail?.ports?.length > 0 ? provisionDetail?.ports[0].port : '';
+    const port: string = provisionDetail?.ports?.length > 0 ? provisionDetail?.ports[0].port : '';
     const kubeconfig = provisionDetail?.kubeconfigContent ? provisionDetail?.kubeconfigContent : '';
 
     const handleDownloadKubeconfigFile = () => {
       const file = new File([kubeconfig], `${ip}.config`, { type: 'text/plain' });
 
       FileSaver.saveAs(file);
+    };
+
+    const handleDownloadNodeDeploymentScript = () => {
+      // if (ip != undefined && port != undefined && clusterSecret != undefined) {
+      const script = GenerateNodeDeploymentScript(ip, port, clusterSecret);
+      const file = new File([script], `deployment.sh`, { type: 'text/plain' });
+      FileSaver.saveAs(file);
+      // }
     };
 
     const handleEditNameOpenClick = () => {
@@ -162,6 +172,23 @@ export const EdgeClustersSummary = React.memo<EdgeClustersSummaryProps>(
                 </TableCell>
                 <TableCell />
               </TableRow>
+              {/*  */}
+              <TableRow className={classes.row}>
+                <TableCell>{t('edgeClusterSummary.nodeDeploymentScript')}</TableCell>
+                <TableCell>
+                  {kubeconfig && (
+                    <React.Fragment>
+                      <Tooltip title={<React.Fragment>{t('edgeClusterSummary.nodeDeploymentScript')}</React.Fragment>}>
+                        <IconButton color="inherit" onClick={handleDownloadNodeDeploymentScript}>
+                          <GetAppIcon />
+                        </IconButton>
+                      </Tooltip>
+                    </React.Fragment>
+                  )}
+                </TableCell>
+                <TableCell />
+              </TableRow>
+              {/*  */}
               <TableRow>
                 <TableCell className={classes.titleCell}>
                   <Typography variant="h5">{t('edgeClusterSummary.networking')}</Typography>

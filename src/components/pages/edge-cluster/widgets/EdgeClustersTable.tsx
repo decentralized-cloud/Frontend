@@ -125,7 +125,7 @@ interface EdgeClustersTableProps {
   onDeleteIconClick?: (ids: string[]) => void;
 }
 
-export const EdgeClustersTable = React.memo<EdgeClustersTableProps>(({ user, onEdgeClusterClick, showCheckbox, onDeleteIconClick }) => {
+const EdgeClustersTable = React.memo<EdgeClustersTableProps>(({ user, onEdgeClusterClick, showCheckbox, onDeleteIconClick }) => {
   const classes = styles();
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
